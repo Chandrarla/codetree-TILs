@@ -1,13 +1,17 @@
-n, k, T = list(input().split())
-arr = []
-sorted_arr=[]
-for _ in range(int(n)):
-    arr.append(input())
+n, k, t = tuple(input().split())
+n, k = int(n), int(k)
+words = []
 
-for i in range(int(n)):
-    if T in arr[i]:
-        sorted_arr.append(arr[i])
-sorted_arr.sort()
+def start_with(a, b):
+    if len(a)<len(b): return False
+    return a[:len(b)] == b 
+    # ==는 비교연산자, True/False를 리턴
 
-k = int(k)
-print(sorted_arr[k-1])
+words = []
+for _ in range(n):
+    word = input()
+    if start_with(word, t):
+        words.append(word)
+
+words.sort()
+print(words[k-1])
