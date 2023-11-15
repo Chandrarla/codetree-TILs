@@ -32,5 +32,5 @@ for i, person in enumerate(people):
         idx = i
 
 print(f"name {people[idx].name}")
-print(f"address {people[idx].address}")
+print(f"addr {people[idx].address}")
 print(f"city {people[idx].region}")
