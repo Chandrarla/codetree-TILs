@@ -1,13 +1,10 @@
 n = int(input())
+students = []
+for i in range(1, n + 1):
+    height, weight = tuple(map(int, input().split()))
+    students.append((height, weight, i))
 
-students = [tuple(map(int, input().split())) for _ in range(n)]
-arr = []
+students.sort(key=lambda x: (-x[0], -x[1], x[2]))
 
-for idx, (h, w) in enumerate(students, start=1):
-    arr.append((h, w, idx))
-
-arr.sort(key = lambda x: (-x[0], -x[1], -x[2])) #정렬 키 작성할 때 괄호 자성
-
-for item in arr:
-    h, w, index = item
-    print(h, w, index)
+for height, weight, number in students:
+    print(height, weight, number)
