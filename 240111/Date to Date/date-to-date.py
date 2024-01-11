@@ -8,6 +8,6 @@ for i in range(1, a+1):
 
 for j in range(1, c+1):
     y += num_of_days[j]
-if a==c and b==d:
+if x==y:
     print(1)
 else:print((y+d) - (x+b))
