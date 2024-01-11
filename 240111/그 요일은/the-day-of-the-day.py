@@ -1,26 +1,26 @@
-a, b, c, d = tuple(map(int, input().split()))
-A = input()
+m1, d1, m2, d2 = tuple(map(int, input().split()))
+day = input()
 
-num_of_days = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+month = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
-month = a
-date = b
-day = 1
-cnt = 0
+def get_num(day):
+    for index, elem in enumerate(days):
+        if elem == day:
+            return index
 
-while True:
+day_num = get_num(day)
+d1 += day_num
 
-    if days[day % 7] == A:
-        cnt += 1
+elapsed_day = 0
 
-    if month == c and date == d:
-        print(cnt)
-        break
+def num_of_day(m, d):
+    total_day = 0
+    for i in range(1, m):
+        total_day += month[i]
+    total_day += d
+    return total_day
 
-    date += 1
-    day += 1
+elapsed_day = num_of_day(m2, d2) - num_of_day(m1, d1)
 
-    if date > num_of_days[month]:
-        month += 1
-        date = 1
+print(elapsed_day//7+1)
