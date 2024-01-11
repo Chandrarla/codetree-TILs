@@ -2,7 +2,7 @@ a, b, c, d = tuple(map(int, input().split()))
 A = input()
 
 num_of_days = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-days = ["NONE", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 month = a
 date = b
