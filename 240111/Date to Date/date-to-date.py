@@ -8,6 +8,5 @@ for i in range(1, a+1):
 
 for j in range(1, c+1):
     y += num_of_days[j]
-if (y+d) - (x+b) == 0:
-    print(1)
-else: print((y+d) - (x+b))
+
+print((y+d) - (x+b) + 1)
