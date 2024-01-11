@@ -1,5 +1,5 @@
 a, b, c, d = tuple(map(int, input().split()))
-// 1 28 3 24
+
 num_of_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 x, y = 0, 0
 
@@ -8,6 +8,6 @@ for i in range(a):
 
 for j in range(c):
     y += num_of_days[j]
-if x==y:
+if (x+b)==(y+d):
     print(1)
-else:print((y+d) - (x+b))
+else:print((y+d) - (x+b)+1)
