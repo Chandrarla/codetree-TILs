@@ -24,4 +24,7 @@ for i in range(2, n * m + 1):
     x, y = x + dx[dir_num], y + dy[dir_num]
     arr[x][y] = i
 
-print(arr)
+for i in range(n):
+    for j in range(m):
+        print(arr[i][j], end = ' ')
+    print()
