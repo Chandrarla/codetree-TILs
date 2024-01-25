@@ -13,13 +13,10 @@ def get_count(row_s, row_e, col_s, col_e):
 max_coin = 0
 for row in range(n):
     for col in range(n):
-        # if row + 3 >= n or col + 3 >= n:
-        #     continue
-        #
-        # coin_num = get_count(row, row + 2, col, col + 2)
-        if row + 2 < n and col + 2 < n:  # Adjusted the condition
-            coin_num = get_count(row, row + 2, col, col + 2)
-            max_coin = max(max_coin, coin_num)
+        if row + 2 >= n or col + 2 >= n:
+            continue
+        coin_num = get_count(row, row + 2, col, col + 2)
+
         max_coin = max(max_coin, coin_num)
 
 print(max_coin)
