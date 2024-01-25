@@ -12,9 +12,9 @@ for _ in range(t):
         d[i] = d[i - 1]
     d[0] = temp
 
-    for elem in u:
-        print(elem, end=" ")
-    print()
+for elem in u:
+    print(elem, end=" ")
+print()
 
-    for elem in d:
-        print(elem, end=" ")
+for elem in d:
+    print(elem, end=" ")
