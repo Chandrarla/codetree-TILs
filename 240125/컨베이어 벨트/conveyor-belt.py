@@ -2,8 +2,9 @@ n, t = tuple(map(int, input().split()))
 u = list(map(int, input().split()))
 d = list(map(int, input().split()))
 
-temp = u[n - 1]
+
 for _ in range(t):
+    temp = u[n - 1]
     for i in range(n - 1, 0, -1):
         u[i] = u[i - 1]
     u[0] = d[n - 1]
