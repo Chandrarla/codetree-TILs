@@ -2,32 +2,29 @@ n, m = tuple(map(int, input().split()))
 arr = [list(map(int, input().split())) for _ in range(n)]
 ans = 0
 
-def check_row(arr):
+def count_consecutive(arr, m):
     global ans
+    n = len(arr)
+
+    def count_in_line(line):
+        global ans  # 여기에서도 전역 변수 ans 사용 선언
+        cnt = 1
+        prev = line[0]
+        for i in range(1, n):
+            if line[i] == prev:
+                cnt += 1
+                if cnt == m:  # m개의 연속된 같은 숫자를 발견하면 ans 증가
+                    ans += 1
+            else:
+                cnt = 1
+                prev = line[i]
+
     for i in range(n):
-        cnt = 1
-        for j in range(1, n):
-            if arr[i][j] == arr[i][j-1]:
-                cnt += 1
-                if cnt >= m:
-                    ans += 1
-                    break
-            else:
-                cnt = 1
+        count_in_line(arr[i])
 
-def check_column(arr):
-    global ans
-    for k in range(n):
-        cnt = 1
-        for l in range(1, n):
-            if arr[l][k] == arr[l-1][k]:
-                cnt += 1
-                if cnt >= m:
-                    ans += 1
-                    break
-            else:
-                cnt = 1
+    for j in range(n):
+        count_in_line([arr[i][j] for i in range(n)])
 
-check_row(arr)
-check_column(arr)
+
+count_consecutive(arr, m)
 print(ans)
