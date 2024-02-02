@@ -19,7 +19,7 @@ def can_go(x, y):
     return True
 
 def dfs(x, y):
-    dxs, dys = [1, 0], [0, 1]
+    dxs, dys = [0, 1], [1, 0]
 
     for dx, dy in zip(dxs, dys):
         new_x, new_y = x + dx, y + dy
