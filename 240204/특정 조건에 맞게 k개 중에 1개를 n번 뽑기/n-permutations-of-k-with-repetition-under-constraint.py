@@ -4,7 +4,7 @@ ans = []
 
 
 def choose(curr_n):
-    if curr_n > n:
+    if curr_n == n:
         print_ans()
         return
 
@@ -22,3 +22,5 @@ def print_ans():
     for num in arr:
         print(num, end=" ")
     print()
+
+choose(0)
