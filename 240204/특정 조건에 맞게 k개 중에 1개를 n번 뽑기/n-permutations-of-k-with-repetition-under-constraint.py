@@ -5,29 +5,20 @@ ans = []
 
 def choose(curr_n):
     if curr_n > n:
-        ans.append(arr[:])
+        print_ans()
         return
 
     for i in range(1, k + 1):
-        arr.append(i)
-        choose(curr_n + 1)
-        arr.pop()
 
-choose(1)
+        if curr_n>=2 and i == ans[-1] and i == ans[-2]: 
+        # 세 번째 자리에 i를 넣을 때 첫 번째, 두 번째 자리가 모두 i인 경우를 제외
+            continue
+        else:
+            arr.append(i)
+            choose(curr_n + 1)
+            arr.pop()
 
-def is_diff(arr):
-    cnt = 0
-    if len(arr) == 1:
-        return True
-    for elem in arr:
-        if elem == arr[0]:
-            cnt += 1
-    if cnt == n:
-        return False
-    else: return True
-
-for elem in ans:
-    if is_diff(elem):
-        for i in elem:
-            print(i, end=" ")
-        print()
+def print_ans():
+    for num in arr:
+        print(num, end=" ")
+    print()
