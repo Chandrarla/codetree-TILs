@@ -1,7 +1,5 @@
 k, n = tuple(map(int, input().split()))
 arr = []
-ans = []
-
 
 def choose(curr_n):
     if curr_n == n:
@@ -10,7 +8,7 @@ def choose(curr_n):
 
     for i in range(1, k + 1):
 
-        if curr_n>=2 and i == ans[-1] and i == ans[-2]: 
+        if curr_n>=2 and i == arr[-1] and i == arr[-2]: 
         # 세 번째 자리에 i를 넣을 때 첫 번째, 두 번째 자리가 모두 i인 경우를 제외
             continue
         else:
