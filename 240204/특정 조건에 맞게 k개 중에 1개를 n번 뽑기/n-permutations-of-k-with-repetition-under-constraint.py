@@ -15,12 +15,19 @@ def choose(curr_n):
 
 choose(1)
 
-cnt = 0
-for elem_arr in ans:
-    for elem in elem_arr:
-        if elem_arr[0] == elem:
-            cnt+=1
-    if cnt != n:
-        for i in elem_arr:
+def is_diff(arr):
+    cnt = 0
+    if len(arr) == 1:
+        return True
+    for elem in arr:
+        if elem == arr[0]:
+            cnt += 1
+    if cnt == n:
+        return False
+    else: return True
+
+for elem in ans:
+    if is_diff(elem):
+        for i in elem:
             print(i, end=" ")
-    print()
+        print()
