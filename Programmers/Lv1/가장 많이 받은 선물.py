@@ -1,4 +1,6 @@
+
 def solution(friends, gifts):
+    names_dict = {name: index for index, name in enumerate(friends)}
     give_score = [0] * len(friends)
     receive_score = [0] * len(friends)
     present_score = [0] * len(friends)
@@ -8,8 +10,6 @@ def solution(friends, gifts):
         [0 for _ in range(len(friends))]
         for _ in range(len(friends))
     ]
-
-    names_dict = {name: index for index, name in enumerate(friends)}
 
     for elem in gifts:
         a1, a2 = tuple(elem.split())
